@@ -8,96 +8,95 @@
     <title>Time Left in 2025</title>
     <style>
         
-        body{
+        body {
             text-align: center;
             font-family: monospace;
             background-color: #fff;
         }
-        .box{
-            display: inline-block;
-            display: inline-block;
+
+        .box {
+            display: flex;
+            align-items: center;  /* Centraliza verticalmente */
+            justify-content: center;  /* Centraliza horizontalmente */
             padding: 10px;
             border-radius: 5px;
             min-width: 40px;
             height: 40px;
             border: 3px solid #000000;
-            border-radius: 5px;
             box-shadow: 2px 2px 1px 0px #000000;
         }
       
-        h2{
-            display: inline-block;
+        h2 {
             margin-right: 10px;
             margin-block-start: 5px;
         }
-        h3{
+
+        h3 {
             text-align: left;
             display: inline-block;
-            
         }
-        .small{
+
+        .small {
             font-size: 15px;
             font-weight: lighter;
         }
 
-        #days{
-            background-color:  #ccd5ac; ;
+        #days {
+            background-color:  #ccd5ac;
         }
-
 
     </style>
 </head>
 <body>
     
     <div id="counter">
-
         <h2 class="box" id="days"></h2>
         <h2 class="box" id="hours"></h2>
         <h2 class="box" id="minutes"></h2>
-        <h3>
-            Left in 2025
-        </h3>
+        <h3>Left in 2025</h3>
     </div>
 
-
-
 <script>
-    function CountDownTimer  (date) {
-    left_days = document.getElementById("days");
-    left_hours = document.getElementById("hours");
-    left_minutes = document.getElementById("minutes");
+    function CountDownTimer(date) {
+        left_days = document.getElementById("days");
+        left_hours = document.getElementById("hours");
+        left_minutes = document.getElementById("minutes");
 
-    end = new Date(date);
-    _second = 1000;
-    _minute = _second * 60;
-    _hour = _minute * 60;
-    _day = _hour * 24;
+        end = new Date(date);
+        _second = 1000;
+        _minute = _second * 60;
+        _hour = _minute * 60;
+        _day = _hour * 24;
     }
-    function showRemaining (){
-    now = new Date();
-    distance = end - now;
-    distance2 = new Date("01/01/2025 00:00 AM") - now
-    if (distance <= 0 ){
-      clearInterval (timer)
-      document.getElementById("counter").innerHTML = "<h2>Nothing! It's Over<h2>";
-      return
-    }
-    else if (distance2 > 0  ){
-      clearInterval (timer)
-      document.getElementById("counter").innerHTML =  "<h2>2025 Didn't Start yet!</h2>";
-      return
-    } 
-    days = Math.floor(distance / _day)
-    hours = Math.floor((distance % _day) / _hour)
-    minutes = Math.floor((distance % _hour) / _minute)
-    left_days.innerHTML = days + " days "
-    left_hours.innerHTML = hours + " hours "
-    left_minutes.innerHTML = minutes + " mins "
-    }
-    
 
-timer = setInterval (showRemaining, 1) 
-CountDownTimer( "01/01/2026 00:00 AM")
+    function showRemaining() {
+        now = new Date();
+        distance = end - now;
+        distance2 = new Date("01/01/2025 00:00 AM") - now;
+        
+        if (distance <= 0) {
+            clearInterval(timer);
+            document.getElementById("counter").innerHTML = "<h2>Nothing! It's Over<h2>";
+            return;
+        }
+        else if (distance2 > 0) {
+            clearInterval(timer);
+            document.getElementById("counter").innerHTML = "<h2>2025 Didn't Start yet!</h2>";
+            return;
+        }
+        
+        days = Math.floor(distance / _day);
+        hours = Math.floor((distance % _day) / _hour);
+        minutes = Math.floor((distance % _hour) / _minute);
+        
+        left_days.innerHTML = days + " days ";
+        left_hours.innerHTML = hours + " hours ";
+        left_minutes.innerHTML = minutes + " mins ";
+    }
+
+    timer = setInterval(showRemaining, 1);
+    CountDownTimer("01/01/2026 00:00 AM");
 </script>
+
 </body>
 </html>
