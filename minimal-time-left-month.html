@@ -15,26 +15,27 @@
 
         .box {
             display: inline-block;
-            padding: 10px;
+            padding: 5px;
             border-radius: 5px;
-            min-width: 100px;  /* Ajustado para acomodar o número maior */
-            height: 100px;  /* Ajustado para acomodar o título e o número */
-            border: 3px solid #000000;
-            box-shadow: 2px 2px 1px 0px #000000;
-            line-height: 1.5;
+            min-width: 80px;  /* Ajustando para um tamanho menor */
+            height: 80px;  /* Ajustando a altura para um design menor */
+            border: 2px solid #000000;
+            box-shadow: 1px 1px 1px 0px #000000;
+            line-height: 1.2;
             text-align: center;
-            margin: 10px;  /* Espaçamento entre os blocos */
+            margin: 8px;  /* Espaçamento entre os blocos */
         }
 
         .title {
-            font-size: 18px;  /* Aumentando o tamanho da fonte do título */
+            font-size: 12px;  /* Reduzido o tamanho da fonte do título */
             font-weight: bold;
             display: block;
-            margin-top: 10px;  /* Colocando um espaço entre o número e o título */
+            margin-top: 5px;  /* Colocando um espaço entre o número e o título */
+            text-transform: lowercase;  /* Garantindo que o texto seja em minúsculas */
         }
 
         .number {
-            font-size: 36px;  /* Aumentando o tamanho do número */
+            font-size: 24px;  /* Reduzido o tamanho do número */
             font-weight: bold;
         }
 
@@ -42,15 +43,15 @@
             background-color: #ccd5ac;  /* Cor de fundo para o "Days" */
         }
 
-        /* Removido o fundo colorido das horas e minutos */
+        /* Mantendo sem fundo colorido para horas e minutos */
         #hours, #minutes {
             background-color: transparent;  /* Agora sem cor de fundo */
         }
 
         h3 {
-            font-size: 24px;
+            font-size: 18px;
             font-weight: lighter;
-            margin-top: 20px;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -59,15 +60,15 @@
     <div id="counter">
         <div class="box" id="days">
             <span class="number" id="daysNumber">0</span>
-            <span class="title">Days</span>
+            <span class="title">days</span>
         </div>
         <div class="box" id="hours">
             <span class="number" id="hoursNumber">0</span>
-            <span class="title">Hours</span>
+            <span class="title">hours</span>
         </div>
         <div class="box" id="minutes">
             <span class="number" id="minutesNumber">0</span>
-            <span class="title">Minutes</span>
+            <span class="title">minutes</span>
         </div>
         <h3>Left in 2025</h3>
     </div>
