@@ -13,45 +13,51 @@
             background-color: #fff;
         }
 
+        #counter {
+            display: flex;  /* Usamos flexbox para alinhar os itens na mesma linha */
+            justify-content: center;  /* Alinha os itens horizontalmente no centro */
+            align-items: center;  /* Alinha verticalmente no centro */
+            margin-top: 20px;
+        }
+
         .box {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             padding: 5px;
             border-radius: 5px;
-            min-width: 70px;  /* Ajustado para um tamanho ainda menor */
-            height: 70px;  /* Diminuição da altura dos blocos */
+            min-width: 100px;
+            height: 50px;
             border: 2px solid #000000;
             box-shadow: 1px 1px 1px 0px #000000;
-            line-height: 1.6;  /* Alinhamento centralizado verticalmente */
-            text-align: center;
-            margin: 8px;  /* Espaçamento entre os blocos */
+            line-height: 1.6;
+            margin: 8px;
         }
 
         .title {
-            font-size: 12px;  /* Aumentado o tamanho da fonte do título */
+            font-size: 17px;
             font-weight: bold;
-            display: block;
-            margin-top: 5px;  /* Colocando um espaço entre o número e o título */
-            text-transform: lowercase;  /* Garantindo que o texto seja em minúsculas */
+            margin-left: 8px;
+            text-transform: lowercase;
         }
 
         .number {
-            font-size: 20px;  /* Reduzido o tamanho do número */
+            font-size: 24px;
             font-weight: bold;
         }
 
         #days {
-            background-color: #ccd5ac;  /* Cor de fundo para o "Days" */
+            background-color: #ccd5ac;
         }
 
-        /* Mantendo sem fundo colorido para horas e minutos */
         #hours, #minutes {
-            background-color: transparent;  /* Agora sem cor de fundo */
+            background-color: transparent;
         }
 
-        h3 {
-            font-size: 16px;
-            font-weight: lighter;
-            margin-top: 15px;
+        .time-left-text {
+            font-size: 18px;
+            font-weight: bold;
+            margin-left: 20px;  /* Espaçamento entre os blocos e o texto */
         }
     </style>
 </head>
@@ -70,7 +76,7 @@
             <span class="number" id="minutesNumber">0</span>
             <span class="title">minutes</span>
         </div>
-        <h3>Left in 2025</h3>
+        <div class="time-left-text">Time Left in 2025</div>  <!-- Colocamos o texto aqui -->
     </div>
 
 <script>
