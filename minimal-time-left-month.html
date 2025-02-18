@@ -7,7 +7,6 @@
 
     <title>Time Left in 2025</title>
     <style>
-        
         body {
             text-align: center;
             font-family: monospace;
@@ -18,56 +17,69 @@
             display: inline-block;
             padding: 10px;
             border-radius: 5px;
-            min-width: 60px;  /* Aumenta o tamanho para acomodar o título e o número */
-            height: 60px;  /* Aumenta a altura para acomodar o título e o número */
+            min-width: 100px;  /* Ajustado para acomodar o número maior */
+            height: 100px;  /* Ajustado para acomodar o título e o número */
             border: 3px solid #000000;
             box-shadow: 2px 2px 1px 0px #000000;
-            line-height: 20px;  /* Ajusta o espaçamento entre as linhas */
-            text-align: center; /* Centraliza horizontalmente o texto */
-        }
-
-        h2 {
-            margin-right: 10px;
-            margin-block-start: 5px;
-        }
-
-        h3 {
-            text-align: left;
-            display: inline-block;
-        }
-
-        .small {
-            font-size: 15px;
-            font-weight: lighter;
-        }
-
-        #days {
-            background-color:  #ccd5ac;
+            line-height: 1.5;
+            text-align: center;
+            margin: 10px;  /* Espaçamento entre os blocos */
         }
 
         .title {
-            display: block;  /* Faz o título ficar em uma nova linha */
-            font-size: 12px;  /* Ajusta o tamanho do título */
-            font-weight: bold; /* Destaca o título */
-            margin-bottom: 5px; /* Espaço entre o título e o número */
+            font-size: 18px;  /* Aumentando o tamanho da fonte do título */
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;  /* Colocando um espaço entre o número e o título */
         }
 
+        .number {
+            font-size: 36px;  /* Aumentando o tamanho do número */
+            font-weight: bold;
+        }
+
+        #days {
+            background-color: #ccd5ac;
+        }
+
+        #hours {
+            background-color: #f1c40f;
+        }
+
+        #minutes {
+            background-color: #e74c3c;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: lighter;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
     
     <div id="counter">
-        <h2 class="box" id="days"><span class="title">Days</span></h2>
-        <h2 class="box" id="hours"><span class="title">Hours</span></h2>
-        <h2 class="box" id="minutes"><span class="title">Minutes</span></h2>
+        <div class="box" id="days">
+            <span class="number" id="daysNumber">0</span>
+            <span class="title">Days</span>
+        </div>
+        <div class="box" id="hours">
+            <span class="number" id="hoursNumber">0</span>
+            <span class="title">Hours</span>
+        </div>
+        <div class="box" id="minutes">
+            <span class="number" id="minutesNumber">0</span>
+            <span class="title">Minutes</span>
+        </div>
         <h3>Left in 2025</h3>
     </div>
 
 <script>
     function CountDownTimer(date) {
-        left_days = document.getElementById("days");
-        left_hours = document.getElementById("hours");
-        left_minutes = document.getElementById("minutes");
+        left_days = document.getElementById("daysNumber");
+        left_hours = document.getElementById("hoursNumber");
+        left_minutes = document.getElementById("minutesNumber");
 
         end = new Date(date);
         _second = 1000;
@@ -96,9 +108,9 @@
         hours = Math.floor((distance % _day) / _hour);
         minutes = Math.floor((distance % _hour) / _minute);
         
-        left_days.innerHTML = "<span class='title'>Days</span>" + days + " ";
-        left_hours.innerHTML = "<span class='title'>Hours</span>" + hours + " ";
-        left_minutes.innerHTML = "<span class='title'>Minutes</span>" + minutes + " ";
+        left_days.innerHTML = days;
+        left_hours.innerHTML = hours;
+        left_minutes.innerHTML = minutes;
     }
 
     timer = setInterval(showRemaining, 1);
