@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 
-    <title>Time Left in 2025</title>
+    <title>Time Left in 2026</title>
     <style>
         body {
             text-align: center;
@@ -95,7 +95,7 @@
     function showRemaining() {
         now = new Date();
         distance = end - now;
-        distance2 = new Date("01/01/2025 00:00 AM") - now;
+        distance2 = new Date("01/01/2026 00:00 AM") - now;
         
         if (distance <= 0) {
             clearInterval(timer);
@@ -118,8 +118,9 @@
     }
 
     timer = setInterval(showRemaining, 1);
-    CountDownTimer("01/01/2026 00:00 AM");
+    CountDownTimer("01/01/2027 00:00 AM");
 </script>
 
 </body>
 </html>
+
